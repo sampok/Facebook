@@ -11,9 +11,10 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     var shownImage: UIImage!
-    @IBOutlet weak var mainImageView: UIImageView!
+    var selectedImageIndex: Int = 0
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var photoActions: UIImageView!
+    @IBOutlet var imageViews: [UIImageView]!
     
     var transitioning: Bool = false
     var prevZoom: CGFloat = 1
@@ -23,9 +24,9 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        scrollView.contentSize = view.frame.size
+        scrollView.contentSize = CGSize(width: view.frame.size.width * 5, height: view.frame.size.height)
         scrollView.delegate = self
-        mainImageView.image = shownImage
+        scrollView.contentOffset.x = CGFloat(selectedImageIndex) * view.frame.width
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -70,7 +71,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return mainImageView
+        return imageViews[Int(scrollView.contentOffset.x / view.frame.width)]
     }
     
 

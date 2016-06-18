@@ -15,6 +15,7 @@ class NewsFeedViewController: UIViewController {
 
     var photoViewTransition: PhotoViewTransition!
     var selectedImageView: UIImageView!
+    var selectedImageIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,14 @@ class NewsFeedViewController: UIViewController {
     
     @IBAction func onTapPhoto(sender: UITapGestureRecognizer) {
         selectedImageView = sender.view as! UIImageView
+        selectedImageIndex = sender.view!.tag
         performSegueWithIdentifier("photoViewSegue", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! PhotoViewController
         destinationViewController.shownImage = selectedImageView.image
+        destinationViewController.selectedImageIndex = selectedImageIndex
         
         // Set the modal presentation style of your destinationViewController to be custom.
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom

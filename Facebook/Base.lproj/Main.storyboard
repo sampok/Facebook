@@ -151,7 +151,7 @@
                                             <outletCollection property="gestureRecognizers" destination="9lm-yC-WTj" appends="YES" id="HWl-fD-WsJ"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="Wuy-By-s0K">
+                                    <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="Wuy-By-s0K">
                                         <rect key="frame" x="4" y="241" width="154" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -159,7 +159,7 @@
                                             <outletCollection property="gestureRecognizers" destination="cv5-vr-OHA" appends="YES" id="Qdu-fP-ztn"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="5Re-CU-PQ4">
+                                    <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="5Re-CU-PQ4">
                                         <rect key="frame" x="162" y="83" width="154" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -167,7 +167,7 @@
                                             <outletCollection property="gestureRecognizers" destination="2jS-D0-bju" appends="YES" id="qvK-fS-07q"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="TzD-dw-XKZ">
+                                    <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="TzD-dw-XKZ">
                                         <rect key="frame" x="162" y="188" width="154" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -175,7 +175,7 @@
                                             <outletCollection property="gestureRecognizers" destination="OKG-P8-XNA" appends="YES" id="dym-XY-BFT"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="8yJ-d0-qCi">
+                                    <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="8yJ-d0-qCi">
                                         <rect key="frame" x="162" y="293" width="154" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -403,19 +403,35 @@
             <objects>
                 <viewController id="NXO-Wi-pk6" customClass="PhotoViewController" customModule="Facebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsa-V5-jgm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1600" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_actions" id="51F-V1-bUl">
                                 <rect key="frame" x="0.0" y="522" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="aO0-Cg-NtY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="aO0-Cg-NtY">
+                                <rect key="frame" x="0.0" y="0.0" width="1600" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kGV-8P-9f0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="kGV-8P-9f0">
                                         <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="NEr-GV-hbK">
+                                        <rect key="frame" x="320" y="56" width="320" height="467"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="xl1-ur-exf">
+                                        <rect key="frame" x="640" y="56" width="320" height="467"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="Gvn-28-YCh">
+                                        <rect key="frame" x="960" y="56" width="320" height="467"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="bs2-Z8-QLr">
+                                        <rect key="frame" x="1280" y="56" width="320" height="467"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -431,16 +447,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1600" height="568"/>
                     <connections>
                         <outlet property="doneButton" destination="hRj-lW-on8" id="zL5-8s-TsJ"/>
-                        <outlet property="mainImageView" destination="kGV-8P-9f0" id="pEG-5k-6BY"/>
                         <outlet property="photoActions" destination="51F-V1-bUl" id="HSC-c6-WyE"/>
                         <outlet property="scrollView" destination="aO0-Cg-NtY" id="flE-pc-Szq"/>
+                        <outletCollection property="imageViews" destination="kGV-8P-9f0" collectionClass="NSMutableArray" id="KbF-vo-gPG"/>
+                        <outletCollection property="imageViews" destination="NEr-GV-hbK" collectionClass="NSMutableArray" id="19d-hP-zxQ"/>
+                        <outletCollection property="imageViews" destination="xl1-ur-exf" collectionClass="NSMutableArray" id="TTR-ob-fQe"/>
+                        <outletCollection property="imageViews" destination="Gvn-28-YCh" collectionClass="NSMutableArray" id="KC7-b3-gTr"/>
+                        <outletCollection property="imageViews" destination="bs2-Z8-QLr" collectionClass="NSMutableArray" id="0Ba-1u-f7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYq-xn-11F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1604" y="2162"/>
+            <point key="canvasLocation" x="-1845" y="2851"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="uwX-E6-Ayy">
