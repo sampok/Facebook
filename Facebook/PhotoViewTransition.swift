@@ -24,17 +24,17 @@ class PhotoViewTransition: BaseTransition {
         containerView.addSubview(transitioningImageView)
         
         newsFeedViewController.selectedImageView.hidden = true
-        photoViewController.scrollView.hidden = true
+        photoViewController.mainScrollView.hidden = true
         
         photoViewController.view.alpha = 0
         
         UIView.animateWithDuration(duration, animations: {
-            transitioningImageView.frame = photoViewController.imageViews[0].frame
+            transitioningImageView.frame = CGRect(x: 0, y: 56, width: 320, height: 467)
             photoViewController.view.alpha = 1
         }) { (finished: Bool) -> Void in
             transitioningImageView.removeFromSuperview()
             newsFeedViewController.selectedImageView.hidden = false
-            photoViewController.scrollView.hidden = false
+            photoViewController.mainScrollView.hidden = false
             self.finish()
         }
     }
@@ -48,22 +48,21 @@ class PhotoViewTransition: BaseTransition {
         let newsFeedViewController = navigationController.topViewController as! NewsFeedViewController
         let photoViewController = fromViewController as! PhotoViewController
         
-        transitioningImageView.image = photoViewController.shownImage
-        transitioningImageView.frame = containerView.convertRect(photoViewController.imageViews[photoViewController.selectedImageIndex].frame, fromView: photoViewController.scrollView)
+        transitioningImageView.image = photoViewController.imageViews[photoViewController.selectedImageIndex].image
+        transitioningImageView.frame = containerView.convertRect(photoViewController.imageViews[photoViewController.selectedImageIndex].frame, fromView: photoViewController.imageViews[photoViewController.selectedImageIndex].superview)
+
         transitioningImageView.contentMode = photoViewController.imageViews[photoViewController.selectedImageIndex].contentMode
         transitioningImageView.clipsToBounds = true
         containerView.addSubview(transitioningImageView)
         
-        newsFeedViewController.selectedImageView.hidden = true
-        photoViewController.scrollView.hidden = true
+        photoViewController.mainScrollView.hidden = true
         
         UIView.animateWithDuration(duration, animations: {
-            transitioningImageView.frame = containerView.convertRect(newsFeedViewController.selectedImageView.frame, fromView: newsFeedViewController.selectedImageView.superview)
+            transitioningImageView.frame = containerView.convertRect(newsFeedViewController.imageViews[photoViewController.selectedImageIndex].frame, fromView: newsFeedViewController.selectedImageView.superview)
             photoViewController.view.alpha = 0
         }) { (finished: Bool) -> Void in
             transitioningImageView.removeFromSuperview()
-            newsFeedViewController.selectedImageView.hidden = false
-            photoViewController.scrollView.hidden = false
+            photoViewController.mainScrollView.hidden = false
             self.finish()
         }
     }

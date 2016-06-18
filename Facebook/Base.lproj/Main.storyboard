@@ -223,6 +223,11 @@
                     <connections>
                         <outlet property="feedImageView" destination="BFk-jQ-UCW" id="FKQ-21-8kr"/>
                         <outlet property="scrollView" destination="YZ6-vp-O3X" id="Pgj-Be-1bK"/>
+                        <outletCollection property="imageViews" destination="4BB-Wc-6TN" collectionClass="NSMutableArray" id="ADd-34-amS"/>
+                        <outletCollection property="imageViews" destination="Wuy-By-s0K" collectionClass="NSMutableArray" id="VEK-jY-mLr"/>
+                        <outletCollection property="imageViews" destination="5Re-CU-PQ4" collectionClass="NSMutableArray" id="L8x-Wa-gJ8"/>
+                        <outletCollection property="imageViews" destination="TzD-dw-XKZ" collectionClass="NSMutableArray" id="PU8-lq-x57"/>
+                        <outletCollection property="imageViews" destination="8yJ-d0-qCi" collectionClass="NSMutableArray" id="gjK-rz-SyF"/>
                         <segue destination="NXO-Wi-pk6" kind="modal" identifier="photoViewSegue" id="nex-a1-n4k"/>
                     </connections>
                 </viewController>
@@ -410,30 +415,60 @@
                                 <rect key="frame" x="0.0" y="522" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="aO0-Cg-NtY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="aO0-Cg-NtY">
                                 <rect key="frame" x="0.0" y="0.0" width="1600" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="kGV-8P-9f0">
-                                        <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="efY-Ep-hte">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="NEr-GV-hbK">
-                                        <rect key="frame" x="320" y="56" width="320" height="467"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="kGV-8P-9f0">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="xUi-3Q-s2k">
+                                        <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="xl1-ur-exf">
-                                        <rect key="frame" x="640" y="56" width="320" height="467"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="GSH-aZ-hQv">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="uGq-Dx-AQF">
+                                        <rect key="frame" x="640" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="Gvn-28-YCh">
-                                        <rect key="frame" x="960" y="56" width="320" height="467"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="cDe-pi-vGU">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="4hF-uB-Cjt">
+                                        <rect key="frame" x="960" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="bs2-Z8-QLr">
-                                        <rect key="frame" x="1280" y="56" width="320" height="467"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="NBA-Sy-BMd">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="nk6-sg-8QW">
+                                        <rect key="frame" x="1280" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="ez2-vy-4j5">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="467"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hRj-lW-on8">
@@ -451,13 +486,18 @@
                     <size key="freeformSize" width="1600" height="568"/>
                     <connections>
                         <outlet property="doneButton" destination="hRj-lW-on8" id="zL5-8s-TsJ"/>
+                        <outlet property="mainScrollView" destination="aO0-Cg-NtY" id="Zeq-NU-6dq"/>
                         <outlet property="photoActions" destination="51F-V1-bUl" id="HSC-c6-WyE"/>
-                        <outlet property="scrollView" destination="aO0-Cg-NtY" id="flE-pc-Szq"/>
                         <outletCollection property="imageViews" destination="kGV-8P-9f0" collectionClass="NSMutableArray" id="KbF-vo-gPG"/>
-                        <outletCollection property="imageViews" destination="NEr-GV-hbK" collectionClass="NSMutableArray" id="19d-hP-zxQ"/>
-                        <outletCollection property="imageViews" destination="xl1-ur-exf" collectionClass="NSMutableArray" id="TTR-ob-fQe"/>
-                        <outletCollection property="imageViews" destination="Gvn-28-YCh" collectionClass="NSMutableArray" id="KC7-b3-gTr"/>
-                        <outletCollection property="imageViews" destination="bs2-Z8-QLr" collectionClass="NSMutableArray" id="0Ba-1u-f7O"/>
+                        <outletCollection property="zoomViews" destination="efY-Ep-hte" collectionClass="NSMutableArray" id="4xB-Yo-h4p"/>
+                        <outletCollection property="zoomViews" destination="xUi-3Q-s2k" collectionClass="NSMutableArray" id="zlS-hZ-3bC"/>
+                        <outletCollection property="zoomViews" destination="uGq-Dx-AQF" collectionClass="NSMutableArray" id="VYw-vU-dEr"/>
+                        <outletCollection property="zoomViews" destination="4hF-uB-Cjt" collectionClass="NSMutableArray" id="IBt-q4-PuT"/>
+                        <outletCollection property="zoomViews" destination="nk6-sg-8QW" collectionClass="NSMutableArray" id="4RG-RI-fQ0"/>
+                        <outletCollection property="imageViews" destination="GSH-aZ-hQv" collectionClass="NSMutableArray" id="8fI-GC-oaT"/>
+                        <outletCollection property="imageViews" destination="cDe-pi-vGU" collectionClass="NSMutableArray" id="hT2-vY-UPV"/>
+                        <outletCollection property="imageViews" destination="NBA-Sy-BMd" collectionClass="NSMutableArray" id="ezS-9G-3ui"/>
+                        <outletCollection property="imageViews" destination="ez2-vy-4j5" collectionClass="NSMutableArray" id="ERo-SS-diZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYq-xn-11F" userLabel="First Responder" sceneMemberID="firstResponder"/>

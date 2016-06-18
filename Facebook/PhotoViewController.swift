@@ -9,12 +9,13 @@ import UIKit
 
 class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainScrollView: UIScrollView!
     var shownImage: UIImage!
     var selectedImageIndex: Int = 0
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var photoActions: UIImageView!
     @IBOutlet var imageViews: [UIImageView]!
+    @IBOutlet var zoomViews: [UIScrollView]!
     
     var transitioning: Bool = false
     var prevZoom: CGFloat = 1
@@ -24,9 +25,15 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        scrollView.contentSize = CGSize(width: view.frame.size.width * 5, height: view.frame.size.height)
-        scrollView.delegate = self
-        scrollView.contentOffset.x = CGFloat(selectedImageIndex) * view.frame.width
+        mainScrollView.contentSize = CGSize(width: view.frame.size.width * 5, height: view.frame.size.height)
+        for zoomView in zoomViews {
+            zoomView.delegate = self
+            zoomView.layer.shadowColor = UIColor.blackColor().CGColor
+            zoomView.layer.shadowOpacity = 1
+            zoomView.layer.shadowOffset = CGSizeZero
+            zoomView.layer.shadowRadius = 20
+        }
+        mainScrollView.contentOffset.x = CGFloat(selectedImageIndex) * view.frame.width
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -49,6 +56,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if (abs(scrollView.contentOffset.y) > 70 && scrollView.zoomScale == 1) {
             transitioning = true
+            selectedImageIndex = getCurrentImageIndex()
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             UIView.animateWithDuration(0.3, animations: {
@@ -64,16 +72,21 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
-        if prevZoom < 0.9 {
+        if prevZoom < 0.8 {
             transitioning = true
+            selectedImageIndex = getCurrentImageIndex()
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return imageViews[Int(scrollView.contentOffset.x / view.frame.width)]
+        selectedImageIndex = getCurrentImageIndex()
+        return imageViews[selectedImageIndex]
     }
     
+    func getCurrentImageIndex() -> Int {
+        return Int(mainScrollView.contentOffset.x / view.frame.width)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,6 +94,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func onDone(sender: AnyObject) {
+        selectedImageIndex = getCurrentImageIndex()
         dismissViewControllerAnimated(true, completion: nil)
     }
 

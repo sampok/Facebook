@@ -12,6 +12,7 @@ class NewsFeedViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
+    @IBOutlet var imageViews: [UIImageView]!
 
     var photoViewTransition: PhotoViewTransition!
     var selectedImageView: UIImageView!

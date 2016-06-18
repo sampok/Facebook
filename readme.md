@@ -2,7 +2,7 @@
 
 The purpose of this homework is to leverage animations and gestures to transition between screens. We're going to use the techniques from this week to implement some interactions in Facebook.
 
-Time spent: `<Number of hours spent>`
+Time spent: `6 hours`
 
 ### Features
 
@@ -16,23 +16,24 @@ Time spent: `<Number of hours spent>`
 #### Optional
 
 - [X] The full screen photo should be zoomable.
-- [ ] The user should be able to page through the other photos in full screen mode.
+- [X] The user should be able to page through the other photos in full screen mode.
 
 #### The following **additional** features are implemented:
 
-- [ ] Zoom out dismisses full screen photo - but couldn't supress bounce back in scrollView: first bounces back, then dismisses the modal
-- [ ] ...
+- [X] Drop shadow for full screen images
+- [X] Zoom out dismisses full screen photo - but couldn't supress bounce back in scrollView: first bounces back, then dismisses the modal
+
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Zooming and scrolling together gets easily very messy :)
+2. -
 
 ### Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='facebook.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -40,4 +41,4 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-* Any libraries or borrowed content.
+* -
